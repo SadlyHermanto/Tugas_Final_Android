@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sadly.tugas_final_android.Model.Phone
 import com.sadly.tugas_final_android.R
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.item_list_hp.view.*
 
 class PhoneAdapter(private val listener: PhoneAdapter.Listener): RecyclerView.Adapter<PhoneAdapter.Holder>() {
 
@@ -17,7 +19,12 @@ class PhoneAdapter(private val listener: PhoneAdapter.Listener): RecyclerView.Ad
 
     inner class Holder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(phone: Phone, listener: Listener) {
-
+            with(itemView) {
+                Picasso.get()
+                    .load(phone.image)
+                    .into(phoneThumb)
+                phoneName.text = phone.phone_name
+            }
         }
     }
 
