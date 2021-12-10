@@ -15,12 +15,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sds : "
+            android:textSize="12sp"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/valueTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="12sp"
             android:text="sdasdsd,asdas,asdas"/>
 
     </LinearLayout>

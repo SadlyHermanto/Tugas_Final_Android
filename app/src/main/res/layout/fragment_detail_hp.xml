@@ -52,6 +52,8 @@
                android:layout_height="wrap_content"
                android:text="Spesifikasi Hp : "
                android:textColor="@color/black"
+               android:textStyle="bold"
+               android:layout_marginTop="10dp"
                android:layout_marginStart="10dp"/>
 
            <androidx.recyclerview.widget.RecyclerView

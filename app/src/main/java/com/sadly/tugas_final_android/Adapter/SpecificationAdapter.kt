@@ -9,7 +9,9 @@ import com.example.phone_specifications_with_api.Specification
 import com.sadly.tugas_final_android.R
 import kotlinx.android.synthetic.main.item_specification.view.*
 
-class SpecificationAdapter(private val list : ArrayList<Specification>, private val listener: SpecificationAdapter.OnItemClickListener) : RecyclerView.Adapter<SpecificationAdapter.Holder>() {
+class SpecificationAdapter(private val listener: SpecificationAdapter.OnItemClickListener) : RecyclerView.Adapter<SpecificationAdapter.Holder>() {
+
+    private var list = mutableListOf<Specification>()
 
     interface OnItemClickListener {
         fun onClick(att : Specification)
@@ -27,6 +29,11 @@ class SpecificationAdapter(private val list : ArrayList<Specification>, private 
                 }
             }
         }
+    }
+
+    fun setData(list: MutableList<Specification>) {
+        this.list = list
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpecificationAdapter.Holder {
