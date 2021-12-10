@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.sadly.tugas_final_android.Model.Phone
 import com.sadly.tugas_final_android.R
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_detail_hp.*
 
 class DetailHpFragment : Fragment() {
 
@@ -16,11 +19,23 @@ class DetailHpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        detailToolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
+        Picasso.get()
+            .load(selectedPhone!!.image)
+            .into(detailThumb)
+
+        detailName.text = selectedPhone!!.phone_name
+
     }
 
     companion object {
 
         @JvmStatic
         fun newInstance() = DetailHpFragment()
+        var selectedPhone: Phone? = null
     }
 }

@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.sadly.tugas_final_android.Adapter.PhoneAdapter
 import com.sadly.tugas_final_android.Model.Phone
 import com.sadly.tugas_final_android.R
+import com.sadly.tugas_final_android.UI.DetailHP.DetailHpFragment
 import kotlinx.android.synthetic.main.fragment_list_hp.*
 import kotlinx.coroutines.launch
 
@@ -38,7 +40,8 @@ class ListHpFragment : Fragment() {
     private fun initVariable() {
         adapter = PhoneAdapter(object : PhoneAdapter.Listener {
             override fun onItemClick(phone: Phone) {
-                TODO("Not yet implemented")
+                DetailHpFragment.selectedPhone = phone
+                findNavController().navigate(R.id.action_listHpFragment_to_detailHpFragment)
             }
         })
 

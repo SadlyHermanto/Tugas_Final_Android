@@ -9,5 +9,14 @@
         android:id="@+id/listHpFragment"
         android:name="com.sadly.tugas_final_android.UI.ListHP.ListHpFragment"
         android:label="fragment_list_hp"
-        tools:layout="@layout/fragment_list_hp" />
+        tools:layout="@layout/fragment_list_hp" >
+        <action
+            android:id="@+id/action_listHpFragment_to_detailHpFragment"
+            app:destination="@id/detailHpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHpFragment"
+        android:name="com.sadly.tugas_final_android.UI.DetailHP.DetailHpFragment"
+        android:label="fragment_detail_hp"
+        tools:layout="@layout/fragment_detail_hp" />
 </navigation>

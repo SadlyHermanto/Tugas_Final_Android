@@ -24,6 +24,9 @@ class PhoneAdapter(private val listener: PhoneAdapter.Listener): RecyclerView.Ad
                     .load(phone.image)
                     .into(phoneThumb)
                 phoneName.text = phone.phone_name
+                this.setOnClickListener {
+                    listener.onItemClick(phone)
+                }
             }
         }
     }
