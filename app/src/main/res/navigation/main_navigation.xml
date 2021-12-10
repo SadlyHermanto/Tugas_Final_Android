@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/listHpFragment">
+
+    <fragment
+        android:id="@+id/listHpFragment"
+        android:name="com.sadly.tugas_final_android.UI.ListHP.ListHpFragment"
+        android:label="fragment_list_hp"
+        tools:layout="@layout/fragment_list_hp" />
+</navigation>
