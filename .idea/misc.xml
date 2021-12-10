@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/repository/JOKI/sadly/Tugas_Final_Android/app/src/main/res/drawable-v24/ic_share.xml" value="0.2703125" />
         <entry key="..\:/repository/JOKI/sadly/Tugas_Final_Android/app/src/main/res/drawable/ic_back.xml" value="0.2703125" />
         <entry key="..\:/repository/JOKI/sadly/Tugas_Final_Android/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/repository/JOKI/sadly/Tugas_Final_Android/app/src/main/res/layout/fragment_detail_hp.xml" value="0.25416666666666665" />
         <entry key="..\:/repository/JOKI/sadly/Tugas_Final_Android/app/src/main/res/layout/fragment_list_hp.xml" value="0.25416666666666665" />
         <entry key="..\:/repository/JOKI/sadly/Tugas_Final_Android/app/src/main/res/layout/item_list_hp.xml" value="0.25416666666666665" />
+        <entry key="..\:/repository/JOKI/sadly/Tugas_Final_Android/app/src/main/res/layout/item_specification.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
