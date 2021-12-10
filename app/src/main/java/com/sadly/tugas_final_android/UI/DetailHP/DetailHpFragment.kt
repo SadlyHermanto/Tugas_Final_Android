@@ -1,5 +1,6 @@
 package com.sadly.tugas_final_android.UI.DetailHP
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -46,7 +47,9 @@ class DetailHpFragment : Fragment() {
     private fun getSpec() {
         val adapter = SpecificationAdapter(object : SpecificationAdapter.OnItemClickListener {
             override fun onClick(att: Specification) {
-                TODO("Not yet implemented")
+                val title = att.title
+                val spec = getSpecValue(att)
+                share(title, spec)
             }
         })
 
@@ -58,6 +61,30 @@ class DetailHpFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.getSpecHp(adapter, url)
         }
+    }
+
+    private fun getSpecValue(item : Specification) : String {
+        var temp = ""
+        var list = item.specs
+        list.forEach { value ->
+            temp += value.key + " : "
+            value.`val`.forEach {
+                temp += "$it "
+            }
+            temp += "\n"
+        }
+        return temp
+    }
+
+    private fun share(title : String, spec : String) {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, "BRAND : ${selectedPhone!!.brand}\nPHONE : ${selectedPhone!!.phone_name}\n\n$title\n$spec")
+            type = "text/plain"
+        }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
     }
 
     companion object {
